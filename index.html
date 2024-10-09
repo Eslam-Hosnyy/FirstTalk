@@ -24,24 +24,44 @@
                 <h2>منذ أول حديث بيننا أدركت أنني لن أنجو منك أبداً</h2>
             </div>
             <div class="image">
+                <img id="roc" src="Images/1.png">
                 <img src="Images/1.png">
+                <img id="roc1" src="Images/1.png">
             </div>
             <div class="lanch-time">
                 <div>
-                    <p id="second">00</p>
-                    <span>Seconds</span>
+                    <p id="second"class="s">00</p>
+                    <span id="ss">Seconds</span>
                 </div>
                 <div>
-                    <p id="minute">00</p>
-                    <span>Minutes</span>
+                    <p id="minute"class="m">00</p>
+                    <span id="sm">Minutes</span>
                 </div>
                 <div>
-                    <p id="hour">00</p>
-                    <span>Hours</span>
+                    <p id="hour"class="h">00</p>
+                    <span id="sh">Hours</span>
                 </div>
                 <div>
-                    <p id="day">00</p>
-                    <span>Days</span>
+                    <p id="day"class="d">00</p>
+                    <span id="sd">Days</span>
+                </div>
+            </div>
+            <div class="lanch-time1">
+                <div>
+                    <p id="second1"class="s">00</p>
+                    <span id="ss">Seconds</span>
+                </div>
+                <div>
+                    <p id="minute1"class="m">00</p>
+                    <span id=sm>Minutes</span>
+                </div>
+                <div>
+                    <p id="hour1"class="h">00</p>
+                    <span id="sh">Hours</span>
+                </div>
+                <div>
+                    <p id="day1"class="d">00</p>
+                    <span id="sd">Days</span>
                 </div>
             </div>
         </div>
@@ -49,21 +69,32 @@
 
     <script>
         var CountUp = new Date("Jun 14, 2024 00:07:00").getTime();
+        var CountDown = new Date("Jul 1, 2026 00:00:00").getTime();
 
         var x = setInterval(function () {
             var now = new Date().getTime();
             var distance = now - CountUp;
+            var distance1 = CountDown - now;
 
             var days = Math.floor((distance) / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+         
+            var days1 = Math.floor((distance1) / (1000 * 60 * 60 * 24));
+            var hours1 = Math.floor((distance1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes1 = Math.floor((distance1 % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds1 = Math.floor((distance1 % (1000 * 60)) / 1000);
 
             document.getElementById("day").innerHTML = days;
             document.getElementById("hour").innerHTML = hours;
             document.getElementById("minute").innerHTML = minutes;
             document.getElementById("second").innerHTML = seconds;
 
+            document.getElementById("day1").innerHTML = days1;
+            document.getElementById("hour1").innerHTML = hours1;
+            document.getElementById("minute1").innerHTML = minutes1;
+            document.getElementById("second1").innerHTML = seconds1;
 
         }, 1000);
 
